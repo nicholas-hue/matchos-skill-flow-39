@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { TrendingUp, Clock, DollarSign, Target } from "lucide-react";
-import teamCollaboration from "@/assets/team-collaboration.jpg";
+import teamCollaboration from "@/assets/team-office.jpg";
 
 const Benefits = () => {
   const benefits = [

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-import heroImage from "@/assets/hero-illustration.jpg";
-import professionalWoman from "@/assets/professional-woman.jpg";
+import heroImage from "@/assets/macbook-code.jpg";
+import professionalWoman from "@/assets/woman-laptop-office.jpg";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 

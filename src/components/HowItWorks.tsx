@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, PenTool, Smartphone, CheckCircle } from "lucide-react";
-import teamMeeting from "@/assets/team-meeting.jpg";
-import womanLaptop from "@/assets/woman-laptop.jpg";
+import teamMeeting from "@/assets/office-screens.jpg";
+import womanLaptop from "@/assets/laptop-desk.jpg";
 
 const HowItWorks = () => {
   const steps = [
