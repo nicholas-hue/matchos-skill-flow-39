@@ -11,7 +11,7 @@ const CTA = () => {
       <div className="container mx-auto px-4 relative">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
-            Ready to revolutionize your blue-collar hiring?
+            Ready to revolutionize your skilled trades hiring?
           </h2>
           <p className="text-xl text-white/90 mb-8 leading-relaxed">
             Join hundreds of companies already saving time and money with MatchOS. 

@@ -14,7 +14,7 @@ const Hero = () => {
             </div>
             
             <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Hire the right <span className="text-primary">blue-collar workers</span> in days, not weeks
+              Hire the right <span className="text-primary">skilled workers</span> in days, not weeks
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
