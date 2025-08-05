@@ -30,7 +30,7 @@ const CTA = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-white text-white hover:bg-white/10"
+              className="border-white/30 text-white hover:bg-white/10 hover:border-white"
             >
               Schedule Demo
             </Button>
