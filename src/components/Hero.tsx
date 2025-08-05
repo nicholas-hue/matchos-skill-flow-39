@@ -1,8 +1,30 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import heroImage from "@/assets/hero-illustration.jpg";
+import { useState, useEffect } from "react";
 
 const Hero = () => {
+  const headlines = [
+    "Hire the right <span class='text-primary'>skilled workers</span> in days, not weeks",
+    "Find qualified <span class='text-primary'>trade professionals</span> without the headache", 
+    "Stop wasting time on <span class='text-primary'>unqualified candidates</span> forever"
+  ];
+
+  const [currentHeadline, setCurrentHeadline] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsVisible(false);
+      setTimeout(() => {
+        setCurrentHeadline((prev) => (prev + 1) % headlines.length);
+        setIsVisible(true);
+      }, 300);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [headlines.length]);
+
   return (
     <section className="pt-24 pb-20 bg-gradient-subtle min-h-screen flex items-center">
       <div className="container mx-auto px-4">
@@ -13,9 +35,12 @@ const Hero = () => {
               Smart hiring tool for construction, manufacturing & trades
             </div>
             
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Hire the right <span className="text-primary">skilled workers</span> in days, not weeks
-            </h1>
+            <h1 
+              className={`text-4xl lg:text-6xl font-bold text-foreground mb-6 leading-tight transition-all duration-300 ${
+                isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4'
+              }`}
+              dangerouslySetInnerHTML={{ __html: headlines[currentHeadline] }}
+            />
             
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
               Stop wasting time on phone interviews. MatchOS automatically checks if candidates have the right skills, 
