@@ -43,10 +43,10 @@ const Benefits = () => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
-            <Card key={index} className="bg-card border-border text-center hover:shadow-lg transition-all duration-300 pulse-subtle">
+            <Card key={index} className="bg-card border-border text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-500 group">
               <CardContent className="p-8">
-                <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <benefit.icon className="h-8 w-8 text-accent" />
+                <div className="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-accent/30 group-hover:scale-110 transition-all duration-300">
+                  <benefit.icon className="h-8 w-8 text-accent group-hover:text-accent transition-colors duration-300" />
                 </div>
                 <div className="text-2xl font-bold text-foreground mb-2">
                   {benefit.stat}
