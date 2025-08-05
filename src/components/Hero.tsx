@@ -10,16 +10,16 @@ const Hero = () => {
           <div className="fade-in-up">
             <div className="inline-flex items-center px-3 py-1 rounded-full border border-border bg-card text-sm text-muted-foreground mb-6">
               <span className="w-2 h-2 bg-accent rounded-full mr-2"></span>
-              AI-powered skill vetting for blue-collar jobs
+              Smart hiring tool for construction, manufacturing & trades
             </div>
             
             <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              Save <span className="text-primary">90% of time</span> on initial candidate screening
+              Hire the right <span className="text-primary">blue-collar workers</span> in days, not weeks
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              MatchOS automates your blue-collar recruitment with intelligent skill assessments, 
-              certification verification, and personalized candidate flows. No more manual screening interviews.
+              Stop wasting time on phone interviews. MatchOS automatically checks if candidates have the right skills, 
+              certifications, and experience for construction, manufacturing, and trade jobs - before you meet them.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">

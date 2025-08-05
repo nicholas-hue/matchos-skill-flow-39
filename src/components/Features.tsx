@@ -5,33 +5,33 @@ const Features = () => {
   const features = [
     {
       icon: MousePointer,
-      title: "Drag & Drop Builder",
-      description: "Create assessment flows in minutes with our intuitive visual builder. No technical skills required."
+      title: "Easy Setup - No Tech Skills Needed",
+      description: "Build your screening questions in minutes. Just drag, drop, and click - like building with blocks. No computer training required."
     },
     {
       icon: MessageSquare,
-      title: "Smart Questioning",
-      description: "Mix multiple choice, open-ended questions, and skill assessments tailored for blue-collar roles."
+      title: "Smart Questions That Actually Work",
+      description: "Ask about welding techniques, safety procedures, equipment operation - our system knows what matters for each trade job."
     },
     {
       icon: FileCheck,
-      title: "Certification Verification",
-      description: "Automated verification of licenses, certifications, and safety training documents."
+      title: "Automatic License & Certificate Checking",
+      description: "Candidates upload their OSHA cards, trade licenses, or certifications. We verify they're real and current - no more fake certificates."
     },
     {
       icon: Zap,
-      title: "Instant Results",
-      description: "Real-time scoring and feedback for both candidates and recruiters with detailed insights."
+      title: "Know If They're Qualified in Minutes",
+      description: "Get a simple 'good fit' or 'not qualified' answer with reasons why, so you know exactly who to interview first."
     },
     {
       icon: Settings,
-      title: "ATS Integration",
-      description: "Seamlessly integrates with major ATS platforms including Workday, BambooHR, and more."
+      title: "Works With Your Current System",
+      description: "Connects to the hiring software you already use - Workday, BambooHR, and others. No need to change how you work."
     },
     {
       icon: Users,
-      title: "Candidate Experience",
-      description: "Mobile-friendly interface with personalized links and immediate feedback for candidates."
+      title: "Easy for Candidates Too",
+      description: "Works on any phone or computer. Candidates get a simple link, answer questions, and get feedback immediately."
     }
   ];
 
@@ -40,10 +40,10 @@ const Features = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Everything you need to streamline blue-collar hiring
+            How MatchOS finds qualified candidates for you
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            From skill assessments to certification verification, MatchOS handles every step of the vetting process.
+            Our simple system checks candidates automatically, so you only interview people who can actually do the job.
           </p>
         </div>
         

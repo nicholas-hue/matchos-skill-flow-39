@@ -5,27 +5,27 @@ const Benefits = () => {
   const benefits = [
     {
       icon: DollarSign,
-      title: "Save $4,700 per hire",
-      description: "Reduce the average cost per hire from $4,700 to under $500 by eliminating manual initial screening.",
-      stat: "90% cost reduction"
+      title: "Stop losing $4,700 on each bad hire",
+      description: "Bad hires cost you training time, equipment, and replacement costs. Only interview candidates who can actually do the work.",
+      stat: "90% less waste"
     },
     {
       icon: Clock,
-      title: "42 days to 2 days",
-      description: "Cut your time-to-fill from the industry average of 42 days down to just 2 days with automated screening.",
-      stat: "95% faster hiring"
+      title: "Fill positions in days, not months",
+      description: "Most companies take 6+ weeks to fill trade jobs. Find qualified candidates in 2 days by screening out unqualified applicants early.",
+      stat: "6 weeks to 2 days"
     },
     {
       icon: Target,
-      title: "Better quality hires",
-      description: "Standardized assessments and skill verification lead to 40% better job performance and retention.",
-      stat: "40% improvement"
+      title: "Hire workers who actually stay",
+      description: "When you hire people with the right skills and certifications, they stay longer and work better. 40% less turnover.",
+      stat: "40% better retention"
     },
     {
       icon: TrendingUp,
-      title: "Scale effortlessly",
-      description: "Handle 10x more candidates without increasing your HR team size. Perfect for seasonal hiring spikes.",
-      stat: "10x capacity"
+      title: "Handle busy seasons without stress",
+      description: "Need to hire 50 people for a big project? Screen hundreds of candidates automatically while you focus on running the business.",
+      stat: "10x more candidates"
     }
   ];
 
@@ -34,10 +34,10 @@ const Benefits = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Transform your recruitment ROI
+            Stop wasting money on bad hires
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Real impact from companies already using MatchOS to revolutionize their blue-collar hiring process.
+            Real results from construction companies, manufacturers, and trade businesses using MatchOS to hire better workers faster.
           </p>
         </div>
         
