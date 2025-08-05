@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { TrendingUp, Clock, DollarSign, Target } from "lucide-react";
+import teamCollaboration from "@/assets/team-collaboration.jpg";
 
 const Benefits = () => {
   const benefits = [
@@ -62,20 +63,28 @@ const Benefits = () => {
           ))}
         </div>
         
-        <div className="mt-16 bg-card rounded-lg p-8 border border-border">
-          <div className="text-center">
+        <div className="mt-16 grid md:grid-cols-2 gap-8 items-center">
+          <div className="bg-card rounded-lg p-8 border border-border">
             <h3 className="text-2xl font-bold text-foreground mb-4">
               "MatchOS reduced our screening time by 85% and improved candidate quality significantly."
             </h3>
-            <div className="flex items-center justify-center space-x-2">
-              <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+            <div className="flex items-center space-x-3 mt-6">
+              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
                 <span className="text-primary-foreground font-bold">JD</span>
               </div>
-              <div className="text-left">
+              <div>
                 <div className="font-semibold text-foreground">Jennifer Davis</div>
                 <div className="text-sm text-muted-foreground">HR Director, BuildCorp</div>
               </div>
             </div>
+          </div>
+          <div className="relative">
+            <img 
+              src={teamCollaboration} 
+              alt="Successful team collaboration with MatchOS" 
+              className="w-full h-auto rounded-lg shadow-lg object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-lg"></div>
           </div>
         </div>
       </div>

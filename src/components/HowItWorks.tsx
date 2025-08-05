@@ -1,5 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, PenTool, Smartphone, CheckCircle } from "lucide-react";
+import teamMeeting from "@/assets/team-meeting.jpg";
+import womanLaptop from "@/assets/woman-laptop.jpg";
 
 const HowItWorks = () => {
   const steps = [
@@ -62,6 +64,25 @@ const HowItWorks = () => {
               )}
             </div>
           ))}
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 items-center mb-16">
+          <div className="relative">
+            <img 
+              src={teamMeeting} 
+              alt="Team meeting discussing hiring strategy" 
+              className="w-full h-auto rounded-lg shadow-lg object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-lg"></div>
+          </div>
+          <div className="relative">
+            <img 
+              src={womanLaptop} 
+              alt="Candidate completing MatchOS assessment" 
+              className="w-full h-auto rounded-lg shadow-lg object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-lg"></div>
+          </div>
         </div>
 
         <div className="bg-gradient-card rounded-lg p-8 border border-border">

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import heroImage from "@/assets/hero-illustration.jpg";
+import professionalWoman from "@/assets/professional-woman.jpg";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -82,13 +83,23 @@ const Hero = () => {
           </div>
           
           <div className="fade-in-up-delay lg:pl-8">
-            <div className="relative">
-              <img 
-                src={heroImage} 
-                alt="MatchOS AI Vetting Interface" 
-                className="w-full h-auto rounded-lg shadow-lg float"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-lg"></div>
+            <div className="relative grid grid-cols-2 gap-4">
+              <div className="relative">
+                <img 
+                  src={heroImage} 
+                  alt="MatchOS AI Vetting Interface" 
+                  className="w-full h-auto rounded-lg shadow-lg float"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-lg"></div>
+              </div>
+              <div className="relative">
+                <img 
+                  src={professionalWoman} 
+                  alt="Professional using MatchOS" 
+                  className="w-full h-auto rounded-lg shadow-lg float object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-lg"></div>
+              </div>
             </div>
           </div>
         </div>
