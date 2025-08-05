@@ -1,8 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { TrendingUp, Clock, DollarSign, Target } from "lucide-react";
 import teamCollaboration from "@/assets/team-office.jpg";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Benefits = () => {
+  const { ref, isVisible } = useScrollAnimation();
   const benefits = [
     {
       icon: DollarSign,
@@ -31,7 +33,7 @@ const Benefits = () => {
   ];
 
   return (
-    <section id="benefits" className="py-20 bg-gradient-subtle">
+    <section ref={ref} id="benefits" className={`py-20 bg-gradient-subtle transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">

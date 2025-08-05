@@ -1,7 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Sparkles, MessageSquare, Shield, Zap, Settings, Smartphone } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Features = () => {
+  const { ref, isVisible } = useScrollAnimation();
   const features = [
     {
       icon: Sparkles,
@@ -36,7 +38,7 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" className="py-20 bg-background">
+    <section ref={ref} id="features" className={`py-20 bg-background transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
