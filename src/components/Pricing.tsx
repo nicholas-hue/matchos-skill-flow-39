@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Check, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Pricing = () => {
   const plans = [
@@ -96,8 +97,9 @@ const Pricing = () => {
                 <Button 
                   className={`w-full mb-6 ${plan.popular ? 'bg-primary hover:bg-primary-hover text-primary-foreground' : ''}`}
                   variant={plan.popular ? 'default' : 'outline'}
+                  asChild
                 >
-                  {plan.cta}
+                  <Link to="/get-started">{plan.cta}</Link>
                 </Button>
                 
                 <ul className="space-y-3">

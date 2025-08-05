@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,6 +25,9 @@ const Navbar = () => {
           <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors">
             Features
           </a>
+          <a href="#how-it-works" className="text-muted-foreground hover:text-foreground transition-colors">
+            How It Works
+          </a>
           <a href="#benefits" className="text-muted-foreground hover:text-foreground transition-colors">
             Benefits
           </a>
@@ -34,11 +38,11 @@ const Navbar = () => {
         
         {/* Desktop Buttons */}
         <div className="hidden md:flex items-center space-x-4">
-          <Button variant="ghost">
-            Sign In
+          <Button variant="ghost" asChild>
+            <Link to="/get-started">Sign In</Link>
           </Button>
-          <Button className="bg-primary hover:bg-primary-hover text-primary-foreground">
-            Get Started
+          <Button className="bg-primary hover:bg-primary-hover text-primary-foreground" asChild>
+            <Link to="/get-started">Get Started</Link>
           </Button>
         </div>
 
@@ -47,8 +51,9 @@ const Navbar = () => {
           <Button 
             size="sm" 
             className="bg-primary hover:bg-primary-hover text-primary-foreground text-xs px-3"
+            asChild
           >
-            Get Started
+            <Link to="/get-started">Get Started</Link>
           </Button>
           <Button
             variant="ghost"
@@ -73,6 +78,13 @@ const Navbar = () => {
               Features
             </a>
             <a 
+              href="#how-it-works" 
+              className="block py-2 text-muted-foreground hover:text-foreground transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              How It Works
+            </a>
+            <a 
               href="#benefits" 
               className="block py-2 text-muted-foreground hover:text-foreground transition-colors"
               onClick={() => setIsMenuOpen(false)}
@@ -87,8 +99,8 @@ const Navbar = () => {
               Pricing
             </a>
             <div className="pt-4 border-t border-border">
-              <Button variant="ghost" className="w-full justify-start mb-2">
-                Sign In
+              <Button variant="ghost" className="w-full justify-start mb-2" asChild>
+                <Link to="/get-started">Sign In</Link>
               </Button>
             </div>
           </div>

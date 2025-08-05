@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import heroImage from "@/assets/hero-illustration.jpg";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const headlines = [
@@ -51,9 +52,12 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary-hover text-primary-foreground shadow-hero"
+                asChild
               >
-                Start Free Trial
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <Link to="/get-started">
+                  Start Free Trial
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </Button>
               <Button size="lg" variant="outline" className="gap-2">
                 <Play className="h-4 w-4" />

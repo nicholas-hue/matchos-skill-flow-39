@@ -2,56 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-/* MatchOS Design System - Professional & Clean */
+/* MatchOS Design System - Modern & Vibrant */
 
 @layer base {
   :root {
-    --background: 0 0% 99%;
-    --foreground: 215 25% 27%;
+    --background: 0 0% 98%;
+    --foreground: 220 13% 13%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 27%;
+    --card-foreground: 220 13% 13%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 27%;
+    --popover-foreground: 220 13% 13%;
 
-    --primary: 213 94% 68%;
+    --primary: 345 83% 47%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 213 94% 63%;
+    --primary-hover: 345 83% 42%;
 
-    --secondary: 210 17% 96%;
-    --secondary-foreground: 215 25% 27%;
+    --secondary: 210 40% 98%;
+    --secondary-foreground: 220 13% 13%;
 
-    --muted: 213 13% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 210 40% 98%;
+    --muted-foreground: 215 13% 40%;
 
-    --accent: 142 76% 73%;
-    --accent-foreground: 215 25% 27%;
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 213 12% 92%;
-    --input: 213 12% 95%;
-    --ring: 213 94% 68%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 345 83% 47%;
 
-    /* MatchOS Brand Colors */
-    --brand-blue: 213 94% 68%;
-    --brand-blue-light: 213 94% 90%;
-    --brand-green: 142 76% 73%;
-    --brand-gray: 215 16% 47%;
-    --brand-gray-light: 213 13% 96%;
+    /* Modern Brand Colors */
+    --brand-coral: 345 83% 47%;
+    --brand-coral-light: 345 83% 85%;
+    --brand-teal: 142 76% 36%;
+    --brand-purple: 250 84% 54%;
+    --brand-orange: 25 95% 53%;
+    --brand-gray: 215 13% 40%;
+    --brand-gray-light: 210 40% 98%;
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(213 94% 68%), hsl(142 76% 73%));
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 99%), hsl(213 13% 98%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(213 13% 98%));
+    /* Rich Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(345 83% 47%) 0%, hsl(250 84% 54%) 50%, hsl(142 76% 36%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 98%) 0%, hsl(210 40% 99%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 40% 99%) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(345 83% 47%) 0%, hsl(25 95% 53%) 100%);
 
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(213 12% 92% / 0.15);
-    --shadow-md: 0 4px 6px -1px hsl(213 12% 92% / 0.15), 0 2px 4px -1px hsl(213 12% 92% / 0.08);
-    --shadow-lg: 0 10px 15px -3px hsl(213 12% 92% / 0.15), 0 4px 6px -2px hsl(213 12% 92% / 0.08);
-    --shadow-hero: 0 25px 50px -12px hsl(213 94% 68% / 0.25);
+    /* Enhanced Shadows */
+    --shadow-sm: 0 1px 3px 0 hsl(220 13% 13% / 0.1);
+    --shadow-md: 0 4px 12px -2px hsl(220 13% 13% / 0.08), 0 2px 6px -1px hsl(220 13% 13% / 0.05);
+    --shadow-lg: 0 10px 25px -5px hsl(220 13% 13% / 0.1), 0 4px 12px -2px hsl(220 13% 13% / 0.05);
+    --shadow-hero: 0 25px 50px -12px hsl(345 83% 47% / 0.4);
 
     --radius: 0.5rem;
 
@@ -73,48 +76,48 @@
   }
 
   .dark {
-    --background: 215 28% 17%;
-    --foreground: 0 0% 95%;
+    --background: 222 84% 4.9%;
+    --foreground: 210 40% 98%;
 
-    --card: 215 28% 17%;
-    --card-foreground: 0 0% 95%;
+    --card: 222 84% 4.9%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 215 28% 17%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 222 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 213 94% 68%;
+    --primary: 345 83% 47%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 213 94% 63%;
+    --primary-hover: 345 83% 42%;
 
-    --secondary: 215 25% 27%;
-    --secondary-foreground: 0 0% 95%;
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 215 25% 27%;
-    --muted-foreground: 215 16% 65%;
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 142 76% 73%;
-    --accent-foreground: 0 0% 95%;
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 215 25% 27%;
-    --input: 215 25% 27%;
-    --ring: 213 94% 68%;
-    --sidebar-background: 215 28% 17%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 213 94% 68%;
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 345 83% 47%;
+    --sidebar-background: 222 84% 4.9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 345 83% 47%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 215 25% 27%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 215 25% 27%;
-    --sidebar-ring: 213 94% 68%;
+    --sidebar-accent: 217 32% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 32% 17%;
+    --sidebar-ring: 345 83% 47%;
 
     /* Dark mode adjustments */
-    --gradient-hero: linear-gradient(135deg, hsl(213 94% 60%), hsl(142 76% 65%));
-    --gradient-subtle: linear-gradient(180deg, hsl(215 28% 17%), hsl(215 25% 20%));
-    --gradient-card: linear-gradient(145deg, hsl(215 25% 20%), hsl(215 28% 17%));
-    --shadow-hero: 0 25px 50px -12px hsl(213 94% 68% / 0.4);
+    --gradient-hero: linear-gradient(135deg, hsl(345 83% 47%) 0%, hsl(250 84% 54%) 50%, hsl(142 76% 36%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(222 84% 4.9%) 0%, hsl(217 32% 17%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(217 32% 17%) 0%, hsl(222 84% 4.9%) 100%);
+    --shadow-hero: 0 25px 50px -12px hsl(345 83% 47% / 0.6);
   }
 }
 
@@ -125,6 +128,10 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   /* Custom animations for MatchOS */

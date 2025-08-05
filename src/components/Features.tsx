@@ -1,10 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { MousePointer, MessageSquare, FileCheck, Zap, Settings, Users } from "lucide-react";
+import { Sparkles, MessageSquare, Shield, Zap, Settings, Smartphone } from "lucide-react";
 
 const Features = () => {
   const features = [
     {
-      icon: MousePointer,
+      icon: Sparkles,
       title: "Easy Setup - No Tech Skills Needed",
       description: "Build your screening questions in minutes. Just drag, drop, and click - like building with blocks. No computer training required."
     },
@@ -14,7 +14,7 @@ const Features = () => {
       description: "Ask about welding techniques, safety procedures, equipment operation - our system knows what matters for each trade job."
     },
     {
-      icon: FileCheck,
+      icon: Shield,
       title: "Automatic License & Certificate Checking",
       description: "Candidates upload their OSHA cards, trade licenses, or certifications. We verify they're real and current - no more fake certificates."
     },
@@ -29,7 +29,7 @@ const Features = () => {
       description: "Connects to the hiring software you already use - Workday, BambooHR, and others. No need to change how you work."
     },
     {
-      icon: Users,
+      icon: Smartphone,
       title: "Easy for Candidates Too",
       description: "Works on any phone or computer. Candidates get a simple link, answer questions, and get feedback immediately."
     }

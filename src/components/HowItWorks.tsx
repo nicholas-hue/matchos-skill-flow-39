@@ -1,16 +1,16 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, Upload, CheckCircle, Users } from "lucide-react";
+import { ArrowRight, PenTool, Smartphone, CheckCircle } from "lucide-react";
 
 const HowItWorks = () => {
   const steps = [
     {
-      icon: Upload,
+      icon: PenTool,
       step: "1",
       title: "You create simple questions",
       description: "Set up questions about the job - like 'Can you operate a forklift?' or 'Do you have OSHA 30 certification?' Takes 5 minutes."
     },
     {
-      icon: Users,
+      icon: Smartphone,
       step: "2", 
       title: "Candidates answer on their phone",
       description: "Send them a link. They answer questions, upload certificates, maybe take a quick skills test. Works on any device."
@@ -24,7 +24,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section id="how-it-works" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
