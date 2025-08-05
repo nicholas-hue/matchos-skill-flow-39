@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-import heroImage from "@/assets/macbook-code.jpg";
-import professionalWoman from "@/assets/woman-laptop-office.jpg";
+import heroImage from "@/assets/hero-illustration.jpg";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -83,23 +82,21 @@ const Hero = () => {
           </div>
           
           <div className="fade-in-up-delay lg:pl-8">
-            <div className="relative grid grid-cols-2 gap-4">
-              <div className="relative">
-                <img 
-                  src={heroImage} 
-                  alt="MatchOS AI Vetting Interface" 
-                  className="w-full h-auto rounded-lg shadow-lg float"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-lg"></div>
-              </div>
-              <div className="relative">
-                <img 
-                  src={professionalWoman} 
-                  alt="Professional using MatchOS" 
-                  className="w-full h-auto rounded-lg shadow-lg float object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-lg"></div>
-              </div>
+            <div className="relative">
+              <img 
+                src={heroImage} 
+                alt="MatchOS AI Vetting Interface" 
+                className="w-full h-auto rounded-2xl shadow-2xl"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl"></div>
+              
+              {/* Floating elements for visual appeal */}
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-accent to-primary rounded-full opacity-80 animate-pulse"></div>
+              <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full opacity-60 animate-pulse" style={{ animationDelay: '1s' }}></div>
+              
+              {/* Abstract geometric shapes */}
+              <div className="absolute top-8 left-8 w-4 h-4 bg-accent rotate-45 opacity-70"></div>
+              <div className="absolute bottom-12 right-12 w-6 h-6 border-2 border-primary rounded-full opacity-50"></div>
             </div>
           </div>
         </div>
