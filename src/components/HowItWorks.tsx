@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, PenTool, Smartphone, CheckCircle } from "lucide-react";
-import teamMeeting from "@/assets/office-screens.jpg";
-import womanLaptop from "@/assets/laptop-desk.jpg";
+import teamMeeting from "@/assets/hr-team-meeting.jpg";
+import womanLaptop from "@/assets/hr-manager-laptop.jpg";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const HowItWorks = () => {
@@ -72,7 +72,7 @@ const HowItWorks = () => {
           <div className="relative">
             <img 
               src={teamMeeting} 
-              alt="Team meeting discussing hiring strategy" 
+              alt="HR team discussing recruitment strategy"
               className="w-full h-auto rounded-lg shadow-lg object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-lg"></div>
@@ -80,7 +80,7 @@ const HowItWorks = () => {
           <div className="relative">
             <img 
               src={womanLaptop} 
-              alt="Candidate completing MatchOS assessment" 
+              alt="HR manager reviewing candidate applications"
               className="w-full h-auto rounded-lg shadow-lg object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-lg"></div>
