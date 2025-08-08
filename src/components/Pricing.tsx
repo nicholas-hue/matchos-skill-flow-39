@@ -11,7 +11,7 @@ const Pricing = () => {
       name: "Free",
       price: "$0",
       period: "forever",
-      description: "Perfect for trying out MatchOS",
+      description: "Perfect for trying out PeopleOS",
       features: [
         "Up to 5 candidate responses per month",
         "Basic assessment templates",

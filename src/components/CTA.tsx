@@ -18,7 +18,7 @@ const CTA = () => {
             Ready to revolutionize your skilled trades hiring?
           </h2>
           <p className="text-xl text-white/90 mb-8 leading-relaxed">
-            Join hundreds of companies already saving time and money with MatchOS. 
+            Join hundreds of companies already saving time and money with PeopleOS. 
             Start your free trial today - no credit card required.
           </p>
           
@@ -47,7 +47,7 @@ const CTA = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 pt-12 border-t border-white/20">
             <div className="text-center">
               <div className="text-2xl font-bold text-white mb-2">500+</div>
-              <div className="text-white/80">Companies trust MatchOS</div>
+              <div className="text-white/80">Companies trust PeopleOS</div>
             </div>
             <div className="text-center">
               <div className="text-2xl font-bold text-white mb-2">50,000+</div>

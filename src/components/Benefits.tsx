@@ -40,7 +40,7 @@ const Benefits = () => {
             Stop wasting money on bad hires
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Real results from construction companies, manufacturers, and trade businesses using MatchOS to hire better workers faster.
+            Real results from construction companies, manufacturers, and trade businesses using PeopleOS to hire better workers faster.
           </p>
         </div>
         
@@ -68,7 +68,7 @@ const Benefits = () => {
         <div className="mt-16 grid md:grid-cols-2 gap-8 items-center">
           <div className="bg-card rounded-lg p-8 border border-border">
             <h3 className="text-2xl font-bold text-foreground mb-4">
-              "MatchOS reduced our screening time by 85% and improved candidate quality significantly."
+              "PeopleOS reduced our screening time by 85% and improved candidate quality significantly."
             </h3>
             <div className="flex items-center space-x-3 mt-6">
               <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
@@ -83,7 +83,7 @@ const Benefits = () => {
           <div className="relative">
             <img 
               src={teamCollaboration} 
-              alt="Successful team collaboration with MatchOS" 
+              alt="Successful team collaboration with PeopleOS" 
               className="w-full h-auto rounded-lg shadow-lg object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-lg"></div>

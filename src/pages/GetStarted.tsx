@@ -36,7 +36,7 @@ const GetStarted = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors">
             <ArrowLeft className="h-4 w-4" />
-            Back to MatchOS
+            Back to PeopleOS
           </Link>
           <div className="text-sm text-muted-foreground">
             Already have an account?{" "}
@@ -55,7 +55,7 @@ const GetStarted = () => {
               Start hiring better <span className="text-primary">skilled workers</span> today
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Join hundreds of companies already saving time and money with MatchOS. 
+              Join hundreds of companies already saving time and money with PeopleOS. 
               Get up and running in minutes, not weeks.
             </p>
 
@@ -79,7 +79,7 @@ const GetStarted = () => {
                 </div>
               </div>
               <p className="text-muted-foreground italic">
-                "MatchOS reduced our screening time by 85% and improved candidate quality significantly. 
+                "PeopleOS reduced our screening time by 85% and improved candidate quality significantly. 
                 We went from taking 6 weeks to fill positions to just 2 days."
               </p>
             </div>

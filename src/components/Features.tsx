@@ -42,7 +42,7 @@ const Features = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            How MatchOS finds qualified candidates for you
+            How PeopleOS finds qualified candidates for you
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Our simple system checks candidates automatically, so you only interview people who can actually do the job.

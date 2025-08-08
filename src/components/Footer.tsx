@@ -8,7 +8,7 @@ const Footer = () => {
               <div className="w-8 h-8 bg-gradient-hero rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">M</span>
               </div>
-              <span className="text-xl font-bold text-foreground">MatchOS</span>
+              <span className="text-xl font-bold text-foreground">PeopleOS</span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Streamlining blue-collar recruitment with AI-powered skill vetting and assessment tools.
@@ -48,7 +48,7 @@ const Footer = () => {
         
         <div className="mt-8 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            © 2024 MatchOS. All rights reserved.
+            © 2024 PeopleOS. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">

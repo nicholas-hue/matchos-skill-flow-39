@@ -44,7 +44,7 @@ const Hero = () => {
             />
             
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Stop wasting time on phone interviews. MatchOS automatically checks if candidates have the right skills, 
+              Stop wasting time on phone interviews. PeopleOS automatically checks if candidates have the right skills, 
               certifications, and experience for construction, manufacturing, and trade jobs - before you meet them.
             </p>
             
@@ -85,7 +85,7 @@ const Hero = () => {
             <div className="relative">
               <img 
                 src={heroImage} 
-                alt="MatchOS AI Vetting Interface" 
+                alt="PeopleOS AI Vetting Interface" 
                 className="w-full h-auto rounded-2xl shadow-2xl"
               />
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl"></div>
