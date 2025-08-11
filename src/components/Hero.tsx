@@ -4,7 +4,8 @@ import WorkflowAnimation from "./WorkflowAnimation";
 import WorkflowAnimation2 from "./WorkflowAnimation2";
 import WorkflowAnimation3 from "./WorkflowAnimation3";
 import WorkflowAnimation4 from "./WorkflowAnimation4";
-import { useState, useEffect, useRef } from "react";
+import { useHeroScrollLock } from "@/hooks/useHeroScrollLock";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
@@ -16,8 +17,6 @@ const Hero = () => {
 
   const [currentHeadline, setCurrentHeadline] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
-  const [currentAnimation, setCurrentAnimation] = useState(0);
-  const heroRef = useRef<HTMLElement>(null);
 
   const animationComponents = [
     WorkflowAnimation,
@@ -26,6 +25,7 @@ const Hero = () => {
     WorkflowAnimation4
   ];
 
+  const { heroRef, currentAnimation, isLocked, allAnimationsViewed } = useHeroScrollLock(animationComponents.length);
   const AnimationComponent = animationComponents[currentAnimation];
 
   // Headline rotation
@@ -41,39 +41,9 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, [headlines.length]);
 
-  // Auto-cycle animations every 3 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentAnimation((prev) => (prev + 1) % animationComponents.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [animationComponents.length]);
-
-  // Scroll-based animation changes
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!heroRef.current) return;
-
-      const heroRect = heroRef.current.getBoundingClientRect();
-      const heroHeight = heroRect.height;
-      const scrollProgress = Math.max(0, Math.min(1, -heroRect.top / (heroHeight * 0.8)));
-      
-      // Change animation based on scroll progress through hero section
-      const animationIndex = Math.floor(scrollProgress * animationComponents.length);
-      const clampedIndex = Math.min(animationIndex, animationComponents.length - 1);
-      
-      if (clampedIndex !== currentAnimation) {
-        setCurrentAnimation(clampedIndex);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [currentAnimation, animationComponents.length]);
 
   return (
-    <section ref={heroRef} className="pt-24 pb-20 bg-gradient-subtle min-h-screen flex items-center">
+    <section ref={heroRef} className="pt-24 pb-20 bg-gradient-subtle min-h-screen flex items-center relative">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="fade-in-up">
@@ -143,6 +113,20 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      {/* Scroll instruction overlay */}
+      {isLocked && !allAnimationsViewed && (
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
+          <div className="bg-background/80 backdrop-blur-sm rounded-lg px-4 py-2 border border-border">
+            <p className="text-sm text-muted-foreground mb-1">
+              Animation {currentAnimation + 1} of {animationComponents.length}
+            </p>
+            <p className="text-xs text-muted-foreground">
+              Scroll down to continue
+            </p>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
