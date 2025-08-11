@@ -23,12 +23,14 @@ export const useHeroScrollLock = (totalAnimations: number) => {
   }, [isLocked]);
 
   const unlockScroll = useCallback(() => {
+    console.log('Attempting to unlock scroll:', { isLocked });
     if (isLocked) {
       document.body.style.position = '';
       document.body.style.top = '';
       document.body.style.width = '';
       window.scrollTo(0, originalScrollY.current);
       setIsLocked(false);
+      console.log('Scroll unlocked');
     }
   }, [isLocked]);
 
@@ -69,11 +71,26 @@ export const useHeroScrollLock = (totalAnimations: number) => {
     
     setCurrentAnimation(prev => {
       const next = prev + 1;
+      console.log('Animation advancing:', { current: prev, next, totalAnimations });
+      
       if (next >= totalAnimations) {
         // All animations viewed, unlock scroll and mark cycle as complete
+        console.log('All animations completed, unlocking scroll');
         setAllAnimationsViewed(true);
         setHasCompletedCycle(true);
-        unlockScroll();
+        
+        // Unlock scroll and automatically scroll past hero section
+        setTimeout(() => {
+          unlockScroll();
+          // Scroll past the hero section
+          setTimeout(() => {
+            if (heroRef.current) {
+              const heroBottom = heroRef.current.offsetTop + heroRef.current.offsetHeight;
+              window.scrollTo({ top: heroBottom, behavior: 'smooth' });
+            }
+          }, 100);
+        }, 500); // Small delay to show final animation
+        
         return prev; // Stay on last animation
       }
       return next;
@@ -83,11 +100,16 @@ export const useHeroScrollLock = (totalAnimations: number) => {
   // Handle scroll wheel events when locked (only if cycle not completed)
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
+      console.log('Wheel event:', { isLocked, isInHeroSection, hasCompletedCycle });
+      
       if (isLocked && isInHeroSection && !hasCompletedCycle) {
         e.preventDefault();
         if (e.deltaY > 0) { // Scrolling down
           advanceAnimation();
         }
+      } else if (hasCompletedCycle && !isLocked) {
+        // Allow normal scrolling after completion
+        console.log('Normal scrolling allowed');
       }
     };
 
