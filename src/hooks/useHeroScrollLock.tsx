@@ -40,26 +40,24 @@ export const useHeroScrollLock = (totalAnimations: number) => {
       ([entry]) => {
         setIsInHeroSection(entry.isIntersecting);
         
-        if (entry.isIntersecting) {
-          // Always reset and lock when entering hero section
+        if (entry.isIntersecting && !isLocked) {
+          // Only lock when entering hero section and not already locked
           console.log('Entering hero section, resetting and locking scroll');
-          
-          // Force unlock any existing lock first
-          if (isLocked) {
-            document.body.style.position = '';
-            document.body.style.top = '';
-            document.body.style.width = '';
-          }
           
           // Reset all animation states
           setCurrentAnimation(0);
           setAllAnimationsViewed(false);
           setHasCompletedCycle(false);
-          setIsLocked(false);
           
-          // Lock scroll fresh
-          lockScroll();
-        } else {
+          // Lock scroll
+          if (!isLocked) {
+            originalScrollY.current = window.scrollY;
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${originalScrollY.current}px`;
+            document.body.style.width = '100%';
+            setIsLocked(true);
+          }
+        } else if (!entry.isIntersecting) {
           // Reset cycle completion when leaving hero section
           setHasCompletedCycle(false);
         }
@@ -75,7 +73,7 @@ export const useHeroScrollLock = (totalAnimations: number) => {
     }
 
     return () => observer.disconnect();
-  }, [lockScroll, hasCompletedCycle, isLocked]);
+  }, [isLocked]);
 
   const advanceAnimation = useCallback(() => {
     const now = Date.now();
