@@ -8,7 +8,7 @@ const Hero = () => {
   const headlines = [
     "Hire the right <span class='text-primary'>skilled workers</span> in days, not weeks",
     "Automate your <span class='text-primary'>hiring process</span> with simple workflow tool", 
-    "Stop wasting time on <span class='text-primary'>unqualified candidates</span> forever"
+    "Craft the <span class='text-primary'>hiring experience</span> you wish you always had"
   ];
 
   const [currentHeadline, setCurrentHeadline] = useState(0);
