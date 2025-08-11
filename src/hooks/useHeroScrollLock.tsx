@@ -91,19 +91,24 @@ export const useHeroScrollLock = (totalAnimations: number) => {
         setAllAnimationsViewed(true);
         setHasCompletedCycle(true);
         
-        // Force unlock scroll immediately
+        // Force unlock scroll immediately with proper restoration
+        const scrollY = originalScrollY.current;
         document.body.style.position = '';
         document.body.style.top = '';
         document.body.style.width = '';
+        document.body.style.overflow = '';
         setIsLocked(false);
         
-        // Scroll past the hero section after a short delay
+        // Restore scroll position and then scroll past hero
+        window.scrollTo(0, scrollY);
+        
+        // Scroll past the hero section after restoration
         setTimeout(() => {
           if (heroRef.current) {
             const heroBottom = heroRef.current.offsetTop + heroRef.current.offsetHeight;
-            window.scrollTo({ top: heroBottom + 50, behavior: 'smooth' });
+            window.scrollTo({ top: heroBottom + 100, behavior: 'smooth' });
           }
-        }, 300);
+        }, 100);
         
         return prev; // Stay on last animation
       }
