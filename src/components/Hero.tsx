@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-import heroImage from "@/assets/hero-illustration.jpg";
+import WorkflowAnimation from "./WorkflowAnimation";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -82,12 +82,7 @@ const Hero = () => {
           
           <div className="fade-in-up-delay lg:pl-8">
             <div className="relative">
-              <img 
-                src={heroImage} 
-                alt="PeopleOS AI Vetting Interface" 
-                className="w-full h-auto rounded-2xl shadow-2xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-2xl"></div>
+              <WorkflowAnimation />
               
               {/* Floating elements for visual appeal */}
               <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-accent to-primary rounded-full opacity-80 animate-pulse"></div>
