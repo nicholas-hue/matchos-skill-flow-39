@@ -40,9 +40,15 @@ export const useHeroScrollLock = (totalAnimations: number) => {
       ([entry]) => {
         setIsInHeroSection(entry.isIntersecting);
         
-        if (entry.isIntersecting && !isLocked) {
-          // Reset states and lock when entering hero section
+        if (entry.isIntersecting) {
+          // Force unlock any existing lock and reset states
           console.log('Entering hero section, resetting and locking scroll');
+          if (isLocked) {
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            setIsLocked(false);
+          }
           setCurrentAnimation(0);
           setAllAnimationsViewed(false);
           setHasCompletedCycle(false);
