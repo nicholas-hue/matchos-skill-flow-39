@@ -5,6 +5,7 @@ export const useHeroScrollLock = (totalAnimations: number) => {
   const [isLocked, setIsLocked] = useState(false);
   const [isInHeroSection, setIsInHeroSection] = useState(false);
   const [allAnimationsViewed, setAllAnimationsViewed] = useState(false);
+  const [hasCompletedCycle, setHasCompletedCycle] = useState(false);
   
   const heroRef = useRef<HTMLElement>(null);
   const originalScrollY = useRef(0);
@@ -17,8 +18,8 @@ export const useHeroScrollLock = (totalAnimations: number) => {
       ([entry]) => {
         setIsInHeroSection(entry.isIntersecting);
         
-        // Lock scroll when entering hero section (if not all animations viewed)
-        if (entry.isIntersecting && !allAnimationsViewed) {
+        // Only lock scroll when entering hero section for the first time (if not completed cycle)
+        if (entry.isIntersecting && !hasCompletedCycle && !isLocked) {
           lockScroll();
         } else if (!entry.isIntersecting && isLocked) {
           unlockScroll();
@@ -35,7 +36,7 @@ export const useHeroScrollLock = (totalAnimations: number) => {
     }
 
     return () => observer.disconnect();
-  }, [allAnimationsViewed, isLocked]);
+  }, [hasCompletedCycle, isLocked]);
 
   const lockScroll = useCallback(() => {
     if (!isLocked) {
@@ -66,8 +67,9 @@ export const useHeroScrollLock = (totalAnimations: number) => {
     setCurrentAnimation(prev => {
       const next = prev + 1;
       if (next >= totalAnimations) {
-        // All animations viewed, unlock scroll
+        // All animations viewed, unlock scroll and mark cycle as complete
         setAllAnimationsViewed(true);
+        setHasCompletedCycle(true);
         unlockScroll();
         return prev; // Stay on last animation
       }
@@ -75,10 +77,10 @@ export const useHeroScrollLock = (totalAnimations: number) => {
     });
   }, [totalAnimations, unlockScroll, scrollCooldown]);
 
-  // Handle scroll wheel events when locked
+  // Handle scroll wheel events when locked (only if cycle not completed)
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
-      if (isLocked && isInHeroSection && !allAnimationsViewed) {
+      if (isLocked && isInHeroSection && !hasCompletedCycle) {
         e.preventDefault();
         if (e.deltaY > 0) { // Scrolling down
           advanceAnimation();
@@ -89,13 +91,13 @@ export const useHeroScrollLock = (totalAnimations: number) => {
     // Handle touch events for mobile
     let touchStartY = 0;
     const handleTouchStart = (e: TouchEvent) => {
-      if (isLocked && isInHeroSection && !allAnimationsViewed) {
+      if (isLocked && isInHeroSection && !hasCompletedCycle) {
         touchStartY = e.touches[0].clientY;
       }
     };
 
     const handleTouchMove = (e: TouchEvent) => {
-      if (isLocked && isInHeroSection && !allAnimationsViewed) {
+      if (isLocked && isInHeroSection && !hasCompletedCycle) {
         e.preventDefault();
         const touchY = e.touches[0].clientY;
         const deltaY = touchStartY - touchY;
@@ -117,15 +119,26 @@ export const useHeroScrollLock = (totalAnimations: number) => {
       window.removeEventListener('touchstart', handleTouchStart);
       window.removeEventListener('touchmove', handleTouchMove);
     };
-  }, [isLocked, isInHeroSection, allAnimationsViewed, advanceAnimation]);
+  }, [isLocked, isInHeroSection, hasCompletedCycle, advanceAnimation]);
 
-  // Reset when leaving hero section
+  // Allow resetting the animation sequence when re-entering hero section
   useEffect(() => {
-    if (!isInHeroSection && allAnimationsViewed) {
-      setCurrentAnimation(0);
-      setAllAnimationsViewed(false);
+    if (isInHeroSection && hasCompletedCycle) {
+      // Allow users to restart the animation sequence if they want
+      // by resetting states when they scroll back to the top of hero section
+      const handleKeyPress = (e: KeyboardEvent) => {
+        if (e.key === 'r' || e.key === 'R') {
+          setCurrentAnimation(0);
+          setAllAnimationsViewed(false);
+          setHasCompletedCycle(false);
+          lockScroll();
+        }
+      };
+
+      window.addEventListener('keydown', handleKeyPress);
+      return () => window.removeEventListener('keydown', handleKeyPress);
     }
-  }, [isInHeroSection, allAnimationsViewed]);
+  }, [isInHeroSection, hasCompletedCycle, lockScroll]);
 
   return {
     heroRef,
@@ -133,6 +146,7 @@ export const useHeroScrollLock = (totalAnimations: number) => {
     isLocked,
     isInHeroSection,
     allAnimationsViewed,
+    hasCompletedCycle,
     lockScroll,
     unlockScroll
   };

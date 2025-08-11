@@ -25,7 +25,7 @@ const Hero = () => {
     WorkflowAnimation4
   ];
 
-  const { heroRef, currentAnimation, isLocked, allAnimationsViewed } = useHeroScrollLock(animationComponents.length);
+  const { heroRef, currentAnimation, isLocked, allAnimationsViewed, hasCompletedCycle, isInHeroSection } = useHeroScrollLock(animationComponents.length);
   const AnimationComponent = animationComponents[currentAnimation];
 
   // Headline rotation
@@ -115,7 +115,7 @@ const Hero = () => {
       </div>
 
       {/* Scroll instruction overlay */}
-      {isLocked && !allAnimationsViewed && (
+      {isLocked && !hasCompletedCycle && (
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
           <div className="bg-background/80 backdrop-blur-sm rounded-lg px-4 py-2 border border-border">
             <p className="text-sm text-muted-foreground mb-1">
@@ -123,6 +123,17 @@ const Hero = () => {
             </p>
             <p className="text-xs text-muted-foreground">
               Scroll down to continue
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* Reset instruction for completed users */}
+      {hasCompletedCycle && isInHeroSection && (
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
+          <div className="bg-background/80 backdrop-blur-sm rounded-lg px-4 py-2 border border-border">
+            <p className="text-xs text-muted-foreground">
+              Press 'R' to restart animation sequence
             </p>
           </div>
         </div>
