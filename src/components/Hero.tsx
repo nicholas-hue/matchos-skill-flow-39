@@ -4,9 +4,7 @@ import WorkflowAnimation from "./WorkflowAnimation";
 import WorkflowAnimation2 from "./WorkflowAnimation2";
 import WorkflowAnimation3 from "./WorkflowAnimation3";
 import WorkflowAnimation4 from "./WorkflowAnimation4";
-import AnimationProgressIndicator from "./AnimationProgressIndicator";
-import { useScrollLock } from "@/hooks/useScrollLock";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
@@ -19,11 +17,7 @@ const Hero = () => {
   const [currentHeadline, setCurrentHeadline] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
   const [currentAnimation, setCurrentAnimation] = useState(0);
-  const [animationProgress, setAnimationProgress] = useState(0);
-  const [hasStartedCycle, setHasStartedCycle] = useState(false);
-  const [cycleComplete, setCycleComplete] = useState(false);
-
-  const { heroRef, isInHeroSection, lockScroll, unlockScroll } = useScrollLock();
+  const heroRef = useRef<HTMLElement>(null);
 
   const animationComponents = [
     WorkflowAnimation,
@@ -47,54 +41,39 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, [headlines.length]);
 
-  // Animation cycling and scroll lock logic
+  // Auto-cycle animations every 3 seconds
   useEffect(() => {
-    if (!isInHeroSection || cycleComplete) return;
+    const interval = setInterval(() => {
+      setCurrentAnimation((prev) => (prev + 1) % animationComponents.length);
+    }, 3000);
 
-    if (!hasStartedCycle) {
-      setHasStartedCycle(true);
-      lockScroll();
-    }
+    return () => clearInterval(interval);
+  }, [animationComponents.length]);
 
-    const animationDuration = 6000; // 6 seconds per animation
-    const progressInterval = 50; // Update progress every 50ms
+  // Scroll-based animation changes
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!heroRef.current) return;
 
-    const progressTimer = setInterval(() => {
-      setAnimationProgress(prev => {
-        const newProgress = prev + (100 / (animationDuration / progressInterval));
-        return Math.min(newProgress, 100);
-      });
-    }, progressInterval);
-
-    const animationTimer = setTimeout(() => {
-      setCurrentAnimation(prev => {
-        const nextAnimation = prev + 1;
-        if (nextAnimation >= animationComponents.length) {
-          // Completed all animations
-          setCycleComplete(true);
-          unlockScroll();
-          return 0;
-        }
-        setAnimationProgress(0);
-        return nextAnimation;
-      });
-    }, animationDuration);
-
-    return () => {
-      clearInterval(progressTimer);
-      clearTimeout(animationTimer);
+      const heroRect = heroRef.current.getBoundingClientRect();
+      const heroHeight = heroRect.height;
+      const scrollProgress = Math.max(0, Math.min(1, -heroRect.top / (heroHeight * 0.8)));
+      
+      // Change animation based on scroll progress through hero section
+      const animationIndex = Math.floor(scrollProgress * animationComponents.length);
+      const clampedIndex = Math.min(animationIndex, animationComponents.length - 1);
+      
+      if (clampedIndex !== currentAnimation) {
+        setCurrentAnimation(clampedIndex);
+      }
     };
-  }, [currentAnimation, isInHeroSection, hasStartedCycle, cycleComplete, lockScroll, unlockScroll, animationComponents.length]);
 
-  const handleSkipAnimations = () => {
-    setCycleComplete(true);
-    unlockScroll();
-    setCurrentAnimation(0);
-    setAnimationProgress(0);
-  };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [currentAnimation, animationComponents.length]);
 
   return (
-    <section ref={heroRef} className="pt-24 pb-20 bg-gradient-subtle min-h-screen flex items-center relative">
+    <section ref={heroRef} className="pt-24 pb-20 bg-gradient-subtle min-h-screen flex items-center">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="fade-in-up">
@@ -164,16 +143,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
-      {/* Animation Progress Indicator */}
-      {isInHeroSection && hasStartedCycle && !cycleComplete && (
-        <AnimationProgressIndicator
-          currentIndex={currentAnimation}
-          total={animationComponents.length}
-          progress={animationProgress}
-          onSkip={handleSkipAnimations}
-        />
-      )}
     </section>
   );
 };
