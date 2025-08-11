@@ -44,8 +44,7 @@ const Hero = () => {
             />
             
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Stop wasting time on phone interviews. PeopleOS automatically checks if candidates have the right skills, 
-              certifications, and experience for construction, manufacturing, and trade jobs - before you meet them.
+              First, we filter. Then, you hire. With PeopleOS you can build intelligent screening workflows that eliminate poor-fit candidates upfront, customized with skills tests, certification uploads, and role-specific questions—so every interview becomes a qualified conversation.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
