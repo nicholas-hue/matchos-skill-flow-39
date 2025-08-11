@@ -1,6 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import WorkflowAnimation from "./WorkflowAnimation";
+import WorkflowAnimation2 from "./WorkflowAnimation2";
+import WorkflowAnimation3 from "./WorkflowAnimation3";
+import WorkflowAnimation4 from "./WorkflowAnimation4";
+import AnimationProgressIndicator from "./AnimationProgressIndicator";
+import { useScrollLock } from "@/hooks/useScrollLock";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -13,7 +18,23 @@ const Hero = () => {
 
   const [currentHeadline, setCurrentHeadline] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
+  const [currentAnimation, setCurrentAnimation] = useState(0);
+  const [animationProgress, setAnimationProgress] = useState(0);
+  const [hasStartedCycle, setHasStartedCycle] = useState(false);
+  const [cycleComplete, setCycleComplete] = useState(false);
 
+  const { heroRef, isInHeroSection, lockScroll, unlockScroll } = useScrollLock();
+
+  const animationComponents = [
+    WorkflowAnimation,
+    WorkflowAnimation2,
+    WorkflowAnimation3,
+    WorkflowAnimation4
+  ];
+
+  const AnimationComponent = animationComponents[currentAnimation];
+
+  // Headline rotation
   useEffect(() => {
     const interval = setInterval(() => {
       setIsVisible(false);
@@ -26,8 +47,54 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, [headlines.length]);
 
+  // Animation cycling and scroll lock logic
+  useEffect(() => {
+    if (!isInHeroSection || cycleComplete) return;
+
+    if (!hasStartedCycle) {
+      setHasStartedCycle(true);
+      lockScroll();
+    }
+
+    const animationDuration = 6000; // 6 seconds per animation
+    const progressInterval = 50; // Update progress every 50ms
+
+    const progressTimer = setInterval(() => {
+      setAnimationProgress(prev => {
+        const newProgress = prev + (100 / (animationDuration / progressInterval));
+        return Math.min(newProgress, 100);
+      });
+    }, progressInterval);
+
+    const animationTimer = setTimeout(() => {
+      setCurrentAnimation(prev => {
+        const nextAnimation = prev + 1;
+        if (nextAnimation >= animationComponents.length) {
+          // Completed all animations
+          setCycleComplete(true);
+          unlockScroll();
+          return 0;
+        }
+        setAnimationProgress(0);
+        return nextAnimation;
+      });
+    }, animationDuration);
+
+    return () => {
+      clearInterval(progressTimer);
+      clearTimeout(animationTimer);
+    };
+  }, [currentAnimation, isInHeroSection, hasStartedCycle, cycleComplete, lockScroll, unlockScroll, animationComponents.length]);
+
+  const handleSkipAnimations = () => {
+    setCycleComplete(true);
+    unlockScroll();
+    setCurrentAnimation(0);
+    setAnimationProgress(0);
+  };
+
   return (
-    <section className="pt-24 pb-20 bg-gradient-subtle min-h-screen flex items-center">
+    <section ref={heroRef} className="pt-24 pb-20 bg-gradient-subtle min-h-screen flex items-center relative">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="fade-in-up">
@@ -82,7 +149,9 @@ const Hero = () => {
           
           <div className="fade-in-up-delay lg:pl-8">
             <div className="relative">
-              <WorkflowAnimation />
+              <div className="transition-all duration-500 ease-in-out">
+                <AnimationComponent />
+              </div>
               
               {/* Floating elements for visual appeal */}
               <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-accent to-primary rounded-full opacity-80 animate-pulse"></div>
@@ -95,6 +164,16 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      {/* Animation Progress Indicator */}
+      {isInHeroSection && hasStartedCycle && !cycleComplete && (
+        <AnimationProgressIndicator
+          currentIndex={currentAnimation}
+          total={animationComponents.length}
+          progress={animationProgress}
+          onSkip={handleSkipAnimations}
+        />
+      )}
     </section>
   );
 };
