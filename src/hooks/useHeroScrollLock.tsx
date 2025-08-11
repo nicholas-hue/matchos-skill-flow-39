@@ -40,15 +40,29 @@ export const useHeroScrollLock = (totalAnimations: number) => {
       ([entry]) => {
         setIsInHeroSection(entry.isIntersecting);
         
-        if (entry.isIntersecting && !hasCompletedCycle && !isLocked) {
-          // Only lock when entering hero section for the first time or after leaving and coming back
-          console.log('Entering hero section, locking scroll');
+        if (entry.isIntersecting) {
+          // Always reset and lock when entering hero section
+          console.log('Entering hero section, resetting and locking scroll');
+          
+          // Force unlock any existing lock first
+          if (isLocked) {
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+          }
+          
+          // Reset all animation states
           setCurrentAnimation(0);
           setAllAnimationsViewed(false);
           setHasCompletedCycle(false);
+          setIsLocked(false);
+          
+          // Lock scroll fresh
           lockScroll();
+        } else {
+          // Reset cycle completion when leaving hero section
+          setHasCompletedCycle(false);
         }
-        // Don't re-lock if we've completed the cycle or are already locked
       },
       { 
         threshold: 0.7,
