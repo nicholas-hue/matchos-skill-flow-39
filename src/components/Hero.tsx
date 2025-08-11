@@ -127,17 +127,6 @@ const Hero = () => {
           </div>
         </div>
       )}
-
-      {/* Reset instruction for completed users */}
-      {hasCompletedCycle && isInHeroSection && (
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center">
-          <div className="bg-background/80 backdrop-blur-sm rounded-lg px-4 py-2 border border-border">
-            <p className="text-xs text-muted-foreground">
-              Press 'R' to restart animation sequence
-            </p>
-          </div>
-        </div>
-      )}
     </section>
   );
 };

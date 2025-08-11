@@ -12,32 +12,6 @@ export const useHeroScrollLock = (totalAnimations: number) => {
   const lastScrollTime = useRef(0);
   const scrollCooldown = 500; // 500ms cooldown between animation changes
 
-  // Track if user is in hero section
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsInHeroSection(entry.isIntersecting);
-        
-        // Only lock scroll when entering hero section for the first time (if not completed cycle)
-        if (entry.isIntersecting && !hasCompletedCycle && !isLocked) {
-          lockScroll();
-        } else if (!entry.isIntersecting && isLocked) {
-          unlockScroll();
-        }
-      },
-      { 
-        threshold: 0.7,
-        rootMargin: '0px'
-      }
-    );
-
-    if (heroRef.current) {
-      observer.observe(heroRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, [hasCompletedCycle, isLocked]);
-
   const lockScroll = useCallback(() => {
     if (!isLocked) {
       originalScrollY.current = window.scrollY;
@@ -57,6 +31,35 @@ export const useHeroScrollLock = (totalAnimations: number) => {
       setIsLocked(false);
     }
   }, [isLocked]);
+
+  // Track if user is in hero section
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsInHeroSection(entry.isIntersecting);
+        
+        if (entry.isIntersecting) {
+          // Reset and restart animation sequence every time user enters hero section
+          setCurrentAnimation(0);
+          setAllAnimationsViewed(false);
+          setHasCompletedCycle(false);
+          lockScroll();
+        } else if (!entry.isIntersecting && isLocked) {
+          unlockScroll();
+        }
+      },
+      { 
+        threshold: 0.7,
+        rootMargin: '0px'
+      }
+    );
+
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [lockScroll, unlockScroll, isLocked]);
 
   const advanceAnimation = useCallback(() => {
     const now = Date.now();
@@ -121,24 +124,6 @@ export const useHeroScrollLock = (totalAnimations: number) => {
     };
   }, [isLocked, isInHeroSection, hasCompletedCycle, advanceAnimation]);
 
-  // Allow resetting the animation sequence when re-entering hero section
-  useEffect(() => {
-    if (isInHeroSection && hasCompletedCycle) {
-      // Allow users to restart the animation sequence if they want
-      // by resetting states when they scroll back to the top of hero section
-      const handleKeyPress = (e: KeyboardEvent) => {
-        if (e.key === 'r' || e.key === 'R') {
-          setCurrentAnimation(0);
-          setAllAnimationsViewed(false);
-          setHasCompletedCycle(false);
-          lockScroll();
-        }
-      };
-
-      window.addEventListener('keydown', handleKeyPress);
-      return () => window.removeEventListener('keydown', handleKeyPress);
-    }
-  }, [isInHeroSection, hasCompletedCycle, lockScroll]);
 
   return {
     heroRef,
