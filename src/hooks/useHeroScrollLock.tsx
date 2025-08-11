@@ -40,15 +40,15 @@ export const useHeroScrollLock = (totalAnimations: number) => {
       ([entry]) => {
         setIsInHeroSection(entry.isIntersecting);
         
-        if (entry.isIntersecting) {
-          // Reset and restart animation sequence every time user enters hero section
+        if (entry.isIntersecting && !hasCompletedCycle && !isLocked) {
+          // Only lock when entering hero section for the first time or after leaving and coming back
+          console.log('Entering hero section, locking scroll');
           setCurrentAnimation(0);
           setAllAnimationsViewed(false);
           setHasCompletedCycle(false);
           lockScroll();
-        } else if (!entry.isIntersecting && isLocked) {
-          unlockScroll();
         }
+        // Don't re-lock if we've completed the cycle or are already locked
       },
       { 
         threshold: 0.7,
@@ -61,7 +61,7 @@ export const useHeroScrollLock = (totalAnimations: number) => {
     }
 
     return () => observer.disconnect();
-  }, [lockScroll, unlockScroll, isLocked]);
+  }, [lockScroll, hasCompletedCycle, isLocked]);
 
   const advanceAnimation = useCallback(() => {
     const now = Date.now();
@@ -79,17 +79,19 @@ export const useHeroScrollLock = (totalAnimations: number) => {
         setAllAnimationsViewed(true);
         setHasCompletedCycle(true);
         
-        // Unlock scroll and automatically scroll past hero section
+        // Force unlock scroll immediately
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        setIsLocked(false);
+        
+        // Scroll past the hero section after a short delay
         setTimeout(() => {
-          unlockScroll();
-          // Scroll past the hero section
-          setTimeout(() => {
-            if (heroRef.current) {
-              const heroBottom = heroRef.current.offsetTop + heroRef.current.offsetHeight;
-              window.scrollTo({ top: heroBottom, behavior: 'smooth' });
-            }
-          }, 100);
-        }, 500); // Small delay to show final animation
+          if (heroRef.current) {
+            const heroBottom = heroRef.current.offsetTop + heroRef.current.offsetHeight;
+            window.scrollTo({ top: heroBottom + 50, behavior: 'smooth' });
+          }
+        }, 300);
         
         return prev; // Stay on last animation
       }
@@ -99,17 +101,13 @@ export const useHeroScrollLock = (totalAnimations: number) => {
 
   // Handle scroll wheel events when locked (only if cycle not completed)
   useEffect(() => {
-    const handleWheel = (e: WheelEvent) => {
-      console.log('Wheel event:', { isLocked, isInHeroSection, hasCompletedCycle });
-      
+    const handleWheel = (e: WheelEvent) => {      
       if (isLocked && isInHeroSection && !hasCompletedCycle) {
         e.preventDefault();
+        console.log('Prevented scroll, advancing animation');
         if (e.deltaY > 0) { // Scrolling down
           advanceAnimation();
         }
-      } else if (hasCompletedCycle && !isLocked) {
-        // Allow normal scrolling after completion
-        console.log('Normal scrolling allowed');
       }
     };
 
