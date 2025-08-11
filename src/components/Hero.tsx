@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Hero = () => {
   const headlines = [
     "Hire the right <span class='text-primary'>skilled workers</span> in days, not weeks",
-    "Automate your hiring process with <span class='text-primary'>simple workflow tool</span>", 
+    "Automate your <span class='text-primary'>hiring process</span> with simple workflow tool", 
     "Stop wasting time on <span class='text-primary'>unqualified candidates</span> forever"
   ];
 
