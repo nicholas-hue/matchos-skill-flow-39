@@ -60,7 +60,7 @@ const Hero = () => {
             />
             
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              First, we qualify. Then, you hire. With PeopleOS you can build intelligent screening workflows that eliminate poor-fit candidates upfront, with skills tests, certification uploads, and role-specific questions, so you can stop wasting time on phone interviews.
+              With PeopleOS you can build intelligent screening workflows that eliminate poor-fit candidates upfront, with skills tests, certification uploads, and role-specific questions, so you can stop wasting time on phone interviews.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
