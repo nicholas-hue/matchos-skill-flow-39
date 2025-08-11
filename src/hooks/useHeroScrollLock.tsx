@@ -40,27 +40,15 @@ export const useHeroScrollLock = (totalAnimations: number) => {
       ([entry]) => {
         setIsInHeroSection(entry.isIntersecting);
         
-        if (entry.isIntersecting && !isLocked) {
-          // Only lock when entering hero section and not already locked
-          console.log('Entering hero section, resetting and locking scroll');
-          
-          // Reset all animation states
+        if (entry.isIntersecting && !hasCompletedCycle && !isLocked) {
+          // Only lock when entering hero section for the first time or after leaving and coming back
+          console.log('Entering hero section, locking scroll');
           setCurrentAnimation(0);
           setAllAnimationsViewed(false);
           setHasCompletedCycle(false);
-          
-          // Lock scroll
-          if (!isLocked) {
-            originalScrollY.current = window.scrollY;
-            document.body.style.position = 'fixed';
-            document.body.style.top = `-${originalScrollY.current}px`;
-            document.body.style.width = '100%';
-            setIsLocked(true);
-          }
-        } else if (!entry.isIntersecting) {
-          // Reset cycle completion when leaving hero section
-          setHasCompletedCycle(false);
+          lockScroll();
         }
+        // Don't re-lock if we've completed the cycle or are already locked
       },
       { 
         threshold: 0.7,
@@ -73,7 +61,7 @@ export const useHeroScrollLock = (totalAnimations: number) => {
     }
 
     return () => observer.disconnect();
-  }, [isLocked]);
+  }, [lockScroll, hasCompletedCycle, isLocked]);
 
   const advanceAnimation = useCallback(() => {
     const now = Date.now();
@@ -91,24 +79,19 @@ export const useHeroScrollLock = (totalAnimations: number) => {
         setAllAnimationsViewed(true);
         setHasCompletedCycle(true);
         
-        // Force unlock scroll immediately with proper restoration
-        const scrollY = originalScrollY.current;
+        // Force unlock scroll immediately
         document.body.style.position = '';
         document.body.style.top = '';
         document.body.style.width = '';
-        document.body.style.overflow = '';
         setIsLocked(false);
         
-        // Restore scroll position and then scroll past hero
-        window.scrollTo(0, scrollY);
-        
-        // Scroll past the hero section after restoration
+        // Scroll past the hero section after a short delay
         setTimeout(() => {
           if (heroRef.current) {
             const heroBottom = heroRef.current.offsetTop + heroRef.current.offsetHeight;
-            window.scrollTo({ top: heroBottom + 100, behavior: 'smooth' });
+            window.scrollTo({ top: heroBottom + 50, behavior: 'smooth' });
           }
-        }, 100);
+        }, 300);
         
         return prev; // Stay on last animation
       }
