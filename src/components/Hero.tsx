@@ -4,6 +4,7 @@ import WorkflowAnimation from "./WorkflowAnimation";
 import WorkflowAnimation2 from "./WorkflowAnimation2";
 import WorkflowAnimation3 from "./WorkflowAnimation3";
 import WorkflowAnimation4 from "./WorkflowAnimation4";
+import IsometricHiringAnimation from "./IsometricHiringAnimation";
 import { useHeroScrollLock } from "@/hooks/useHeroScrollLock";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
@@ -22,7 +23,8 @@ const Hero = () => {
     WorkflowAnimation,
     WorkflowAnimation2,
     WorkflowAnimation3,
-    WorkflowAnimation4
+    WorkflowAnimation4,
+    IsometricHiringAnimation
   ];
 
   const { heroRef, currentAnimation, isLocked, allAnimationsViewed, hasCompletedCycle, isInHeroSection } = useHeroScrollLock(animationComponents.length);

@@ -184,4 +184,35 @@
   .bg-gradient-card {
     background: var(--gradient-card);
   }
+
+  /* Isometric Animation Enhancements */
+  @keyframes isometricFloat {
+    0%, 100% { transform: translateY(0px) translateX(0px); }
+    25% { transform: translateY(-2px) translateX(1px); }
+    50% { transform: translateY(-4px) translateX(0px); }
+    75% { transform: translateY(-2px) translateX(-1px); }
+  }
+
+  @keyframes dataFlow {
+    0% { transform: translateX(-10px); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateX(10px); opacity: 0; }
+  }
+
+  @keyframes screenGlow {
+    0%, 100% { filter: brightness(1) saturate(1); }
+    50% { filter: brightness(1.1) saturate(1.2); }
+  }
+
+  .isometric-element {
+    animation: isometricFloat 8s ease-in-out infinite;
+  }
+
+  .data-particle {
+    animation: dataFlow 3s linear infinite;
+  }
+
+  .screen-glow {
+    animation: screenGlow 4s ease-in-out infinite;
+  }
 }
