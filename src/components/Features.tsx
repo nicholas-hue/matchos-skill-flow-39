@@ -7,33 +7,33 @@ const Features = () => {
   const features = [
     {
       icon: Sparkles,
-      title: "Easy Setup - No Tech Skills Needed",
-      description: "Build your screening questions in minutes. Just drag, drop, and click - like building with blocks. No computer training required."
+      title: "Mobile-Friendly Assessments",
+      description: "Candidates can showcase their talent on any device with engaging assessments that they'll actually enjoy completing."
     },
     {
       icon: MessageSquare,
-      title: "Smart Questions That Actually Work",
-      description: "Ask about welding techniques, safety procedures, equipment operation - our system knows what matters for each trade job."
+      title: "AI-Powered Skills Testing",
+      description: "Test communication, time management, resilience, and job-specific tasks. Our AI analyzes responses to identify the best candidates."
     },
     {
       icon: Shield,
-      title: "Automatic License & Certificate Checking",
-      description: "Candidates upload their OSHA cards, trade licenses, or certifications. We verify they're real and current - no more fake certificates."
+      title: "Real-Time Candidate Tracking",
+      description: "Stay updated when candidates open emails, start tests, or complete assessments. Know exactly where each candidate stands."
     },
     {
       icon: Zap,
-      title: "Know If They're Qualified in Minutes",
-      description: "Get a simple 'good fit' or 'not qualified' answer with reasons why, so you know exactly who to interview first."
+      title: "Automated Candidate Ranking",
+      description: "Skip manual resume review and get candidates ranked by performance. Spend time only on the most qualified applicants."
     },
     {
       icon: Settings,
-      title: "Works With Your Current System",
-      description: "Connects to the hiring software you already use - Workday, BambooHR, and others. No need to change how you work."
+      title: "File Upload Capabilities", 
+      description: "Candidates can upload portfolios, certificates, or any file type they'll use on the job. Support for PDF, PSD, ODT and more."
     },
     {
       icon: Smartphone,
-      title: "Easy for Candidates Too",
-      description: "Works on any phone or computer. Candidates get a simple link, answer questions, and get feedback immediately."
+      title: "Collaborative Hiring",
+      description: "Share candidate details and scores with hiring managers and recruiters to make informed team decisions."
     }
   ];
 
@@ -42,10 +42,10 @@ const Features = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            How PeopleOS finds qualified candidates for you
+            Create efficiency in your hiring process
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Our simple system checks candidates automatically, so you only interview people who can actually do the job.
+            Screen all applicants as they apply and get a ranked list of candidates based on their performance instead of manually reviewing resumes.
           </p>
         </div>
         

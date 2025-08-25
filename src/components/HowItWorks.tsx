@@ -11,20 +11,20 @@ const HowItWorks = () => {
     {
       icon: PenTool,
       step: "1",
-      title: "You create simple questions",
-      description: "Set up questions about the job - like 'Can you operate a forklift?' or 'Do you have OSHA 30 certification?' Takes 5 minutes."
+      title: "Create assessments with AI training",
+      description: "Build engaging assessments with our drag-and-drop builder. Train the AI to value what you value by grading sample responses from 1-10."
     },
     {
       icon: Smartphone,
       step: "2", 
-      title: "Candidates answer on their phone",
-      description: "Send them a link. They answer questions, upload certificates, maybe take a quick skills test. Works on any device."
+      title: "Candidates complete mobile-friendly assessments",
+      description: "Candidates enjoy the process on any device. They answer questions, upload files, and complete skills tests that predict job performance."
     },
     {
       icon: CheckCircle,
       step: "3",
-      title: "You get a simple 'yes' or 'no'",
-      description: "Our system checks their answers against what you need. You see 'Good fit for electrician role' or 'Missing required certification.'"
+      title: "Get AI-powered candidate rankings",
+      description: "Receive ranked candidates based on performance with detailed insights. Skip manual resume review and focus on qualified applicants."
     }
   ];
 
@@ -33,11 +33,11 @@ const HowItWorks = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            How does the AI actually check if someone is qualified?
+            How PeopleOS transforms your hiring process
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Think of it like having an experienced foreman review each application. The AI looks at their answers, 
-            checks their certificates, and compares everything to what you said you need for the job.
+            Our AI-powered platform streamlines every step of hiring, from creating engaging assessments to 
+            delivering ranked candidates, so you can make better hiring decisions faster.
           </p>
         </div>
         
@@ -92,15 +92,15 @@ const HowItWorks = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-4">
-                The AI is like having an expert helper
+                Train the AI to value what you value
               </h3>
               <p className="text-muted-foreground mb-4">
-                It doesn't replace your judgment - it just does the boring work of checking if people meet your basic requirements. 
-                Like having someone go through 100 resumes and only show you the 10 that actually have the right experience.
+                Grade sample responses from 1-10 and the AI learns your preferences. The more you train it, 
+                the better it becomes at identifying candidates who match your specific requirements and company culture.
               </p>
               <p className="text-muted-foreground">
-                You still make the final hiring decision after meeting the candidates. The AI just makes sure you're not wasting 
-                time interviewing people who can't do the job.
+                Your feedback is fed back into the AI so it understands what good and bad answers look like to you, 
+                ensuring every assessment reflects your unique hiring standards.
               </p>
             </div>
             <div className="bg-primary/5 rounded-lg p-6">
@@ -108,22 +108,22 @@ const HowItWorks = () => {
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
-                    <div className="font-semibold text-foreground">Checks certificates are real</div>
-                    <div className="text-sm text-muted-foreground">Verifies OSHA cards, trade licenses, safety training</div>
+                    <div className="font-semibold text-foreground">Analyzes response patterns</div>
+                    <div className="text-sm text-muted-foreground">AI processes thousands of responses looking for key traits and skills</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
-                    <div className="font-semibold text-foreground">Compares experience to job needs</div>
-                    <div className="text-sm text-muted-foreground">Matches years of experience, specific skills, equipment knowledge</div>
+                    <div className="font-semibold text-foreground">Personalized candidate scoring</div>
+                    <div className="text-sm text-muted-foreground">Tracks individual interactions and responses for accurate evaluation</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
-                    <div className="font-semibold text-foreground">Gives you a simple recommendation</div>
-                    <div className="text-sm text-muted-foreground">"Strong match" or "Missing requirements" with clear reasons</div>
+                    <div className="font-semibold text-foreground">Continuous learning improvement</div>
+                    <div className="text-sm text-muted-foreground">Gets smarter with each grading session you complete</div>
                   </div>
                 </div>
               </div>

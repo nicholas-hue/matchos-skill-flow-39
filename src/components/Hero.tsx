@@ -11,9 +11,9 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   const headlines = [
-    "Hire the right <span class='text-primary'>skilled workers</span> in days, not weeks",
-    "Automate your <span class='text-primary'>hiring process</span> with simple workflow tool", 
-    "Transform <span class='text-primary'>hiring chaos</span> into organized excellence"
+    "Take the guesswork out of <span class='text-primary'>hiring</span> with AI-powered assessments",
+    "Make better <span class='text-primary'>hiring decisions</span> faster with engaging skills tests", 
+    "Find <span class='text-primary'>motivated applicants</span> and reduce time to hire"
   ];
 
   const [currentHeadline, setCurrentHeadline] = useState(0);
@@ -51,7 +51,7 @@ const Hero = () => {
           <div className="fade-in-up">
             <div className="inline-flex items-center px-3 py-1 rounded-full border border-border bg-card text-sm text-muted-foreground mb-6">
               <span className="w-2 h-2 bg-accent rounded-full mr-2"></span>
-              Smart hiring tool for construction, manufacturing & trades
+              AI-powered retail recruitment software for smarter hiring
             </div>
             
             <h1 
@@ -62,7 +62,7 @@ const Hero = () => {
             />
             
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              With PeopleOS you can build intelligent screening workflows that eliminate poor-fit candidates upfront, with skills tests, certification uploads, and role-specific questions, so you can stop wasting time on phone interviews.
+              See who can actually do the job with engaging, mobile-friendly assessments that test real skills. Surface the most qualified candidates based on how they perform tasks specific to your business while reducing employee turnover.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -84,16 +84,16 @@ const Hero = () => {
             
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-border">
               <div>
-                <div className="text-2xl font-bold text-foreground">$4,700</div>
-                <div className="text-sm text-muted-foreground">Average cost per hire saved</div>
+                <div className="text-2xl font-bold text-foreground">65%</div>
+                <div className="text-sm text-muted-foreground">Reduction in employee turnover</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-foreground">42 days</div>
-                <div className="text-sm text-muted-foreground">Reduced to 2 days</div>
+                <div className="text-2xl font-bold text-foreground">85%</div>
+                <div className="text-sm text-muted-foreground">Time saved on resume review</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-foreground">90%</div>
-                <div className="text-sm text-muted-foreground">Time reduction</div>
+                <div className="text-2xl font-bold text-foreground">92%</div>
+                <div className="text-sm text-muted-foreground">Improved job performance prediction</div>
               </div>
             </div>
           </div>
