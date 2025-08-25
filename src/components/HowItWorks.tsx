@@ -3,6 +3,7 @@ import { ArrowRight, PenTool, Smartphone, CheckCircle } from "lucide-react";
 import teamMeeting from "@/assets/hr-team-meeting.jpg";
 import womanLaptop from "@/assets/hr-manager-laptop.jpg";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import NetworkWorkflowImageGenerator from "./NetworkWorkflowImageGenerator";
 
 const HowItWorks = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -128,6 +129,19 @@ const HowItWorks = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Network Workflow Image Generator Section */}
+        <div className="mt-16 bg-card border border-border rounded-lg p-8">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-foreground mb-4">
+              Generate Custom Network Workflow Images
+            </h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Create custom network workflow diagrams for your presentations and documentation using AI.
+            </p>
+          </div>
+          <NetworkWorkflowImageGenerator />
         </div>
       </div>
     </section>
