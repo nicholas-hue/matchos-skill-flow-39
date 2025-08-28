@@ -46,7 +46,7 @@ const Hero = () => {
 
 
   return (
-    <section ref={heroRef} className="pt-24 pb-20 bg-gradient-subtle min-h-screen flex items-center relative overflow-hidden">
+    <section ref={heroRef} className="pt-24 pb-20 bg-black min-h-screen flex items-center relative overflow-hidden">
       {/* Sparkles Background */}
       <div className="absolute inset-0 w-full h-full">
         <SparklesCore
