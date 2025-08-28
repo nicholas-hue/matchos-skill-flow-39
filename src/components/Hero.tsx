@@ -8,6 +8,7 @@ import IsometricHiringAnimation from "./IsometricHiringAnimation";
 import { useHeroScrollLock } from "@/hooks/useHeroScrollLock";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { SparklesCore } from "@/components/ui/sparkles";
 
 const Hero = () => {
   const headlines = [
@@ -45,8 +46,22 @@ const Hero = () => {
 
 
   return (
-    <section ref={heroRef} className="pt-24 pb-20 bg-gradient-subtle min-h-screen flex items-center relative">
-      <div className="container mx-auto px-4">
+    <section ref={heroRef} className="pt-24 pb-20 bg-gradient-subtle min-h-screen flex items-center relative overflow-hidden">
+      {/* Sparkles Background */}
+      <div className="absolute inset-0 w-full h-full">
+        <SparklesCore
+          id="hero-sparkles"
+          background="transparent"
+          minSize={0.4}
+          maxSize={1.0}
+          particleDensity={50}
+          className="w-full h-full"
+          particleColor="hsl(var(--primary))"
+          speed={0.5}
+        />
+      </div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="fade-in-up">
             <div className="inline-flex items-center px-3 py-1 rounded-full border border-border bg-card text-sm text-muted-foreground mb-6">
