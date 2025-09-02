@@ -98,9 +98,13 @@ const HowItWorks = () => {
                 Grade sample responses from 1-10 and the AI learns your preferences. The more you train it, 
                 the better it becomes at identifying candidates who match your specific requirements and company culture.
               </p>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground mb-4">
                 Your feedback is fed back into the AI so it understands what good and bad answers look like to you, 
                 ensuring every assessment reflects your unique hiring standards.
+              </p>
+              <p className="text-muted-foreground">
+                It doesn't replace your judgement. Our AI is designed to enhance your hiring process, not replace your decision-making. 
+                Use the AI recommendations as a powerful tool to identify top candidates faster, while maintaining full control over who you choose to hire.
               </p>
             </div>
             <div className="bg-primary/5 rounded-lg p-6">
@@ -128,20 +132,6 @@ const HowItWorks = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div className="bg-card border border-border rounded-lg p-8 mb-8">
-          <div className="text-center">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
-              It doesn't replace your judgement
-            </h3>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Our AI is designed to enhance your hiring process, not replace your decision-making. 
-              It provides data-driven insights and candidate rankings to help you make more informed choices, 
-              but the final hiring decisions always remain in your hands. Use the AI recommendations as a 
-              powerful tool to identify top candidates faster, while maintaining full control over who you choose to hire.
-            </p>
           </div>
         </div>
 
