@@ -88,7 +88,7 @@ const HowItWorks = () => {
           </div>
         </div>
 
-        <div className="bg-gradient-card rounded-lg p-8 border border-border">
+        <div className="bg-gradient-card rounded-lg p-8 border border-border mb-8">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-4">
@@ -128,6 +128,20 @@ const HowItWorks = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div className="bg-card border border-border rounded-lg p-8 mb-8">
+          <div className="text-center">
+            <h3 className="text-2xl font-bold text-foreground mb-4">
+              It doesn't replace your judgement
+            </h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Our AI is designed to enhance your hiring process, not replace your decision-making. 
+              It provides data-driven insights and candidate rankings to help you make more informed choices, 
+              but the final hiring decisions always remain in your hands. Use the AI recommendations as a 
+              powerful tool to identify top candidates faster, while maintaining full control over who you choose to hire.
+            </p>
           </div>
         </div>
 
