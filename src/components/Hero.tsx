@@ -12,7 +12,7 @@ import { SparklesCore } from "@/components/ui/sparkles";
 
 const Hero = () => {
   const headlines = [
-    "Take the guesswork out of <span class='text-primary'>hiring</span> with AI-powered assessments",
+    "Qualifying the best. Skipping the rest. <span class='text-primary'>Instantly</span>",
     "Make better <span class='text-primary'>hiring decisions</span> faster with engaging skills tests", 
     "Find <span class='text-primary'>motivated applicants</span> and reduce time to hire"
   ];
@@ -66,7 +66,7 @@ const Hero = () => {
           <div className="fade-in-up">
             <div className="inline-flex items-center px-3 py-1 rounded-full border border-border bg-card text-sm text-muted-foreground mb-6">
               <span className="w-2 h-2 bg-accent rounded-full mr-2"></span>
-              AI-powered retail recruitment software for smarter hiring
+              PeopleOS is intelligent AI recruitment assistant that works for you
             </div>
             
             <h1 
@@ -76,9 +76,27 @@ const Hero = () => {
               dangerouslySetInnerHTML={{ __html: headlines[currentHeadline] }}
             />
             
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              See who can actually do the job with engaging, mobile-friendly assessments that test real skills. Surface the most qualified candidates based on how they perform tasks specific to your business while reducing employee turnover.
+            <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
+              Simplify hiring process and let your team focus on people, not paperwork.
             </p>
+            
+            <div className="bg-card border border-border rounded-lg p-4 mb-6">
+              <div className="flex flex-col sm:flex-row gap-2">
+                <input 
+                  type="email" 
+                  placeholder="Enter your email address" 
+                  className="flex-1 px-4 py-2 bg-background border border-border rounded-md text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+                <Button className="bg-primary hover:bg-primary-hover text-primary-foreground px-6 py-2">
+                  Join Waitlist
+                </Button>
+              </div>
+              <div className="flex flex-wrap gap-4 mt-3 text-xs text-muted-foreground">
+                <span>• No credit card required</span>
+                <span>• Free 14-day trial</span>
+                <span>• Cancel anytime</span>
+              </div>
+            </div>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button 
@@ -99,16 +117,16 @@ const Hero = () => {
             
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-border">
               <div>
-                <div className="text-2xl font-bold text-foreground">65%</div>
-                <div className="text-sm text-muted-foreground">Reduction in employee turnover</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-foreground">85%</div>
-                <div className="text-sm text-muted-foreground">Time saved on resume review</div>
-              </div>
-              <div>
                 <div className="text-2xl font-bold text-foreground">92%</div>
-                <div className="text-sm text-muted-foreground">Improved job performance prediction</div>
+                <div className="text-sm text-muted-foreground">Accuracy Rate</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-foreground">87%</div>
+                <div className="text-sm text-muted-foreground">Completion Rate</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-foreground">94%</div>
+                <div className="text-sm text-muted-foreground">Candidate Satisfaction</div>
               </div>
             </div>
           </div>
