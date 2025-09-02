@@ -6,36 +6,36 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "How does PeopleOS improve hiring accuracy?",
-      answer: "PeopleOS uses advanced AI algorithms to analyze candidate responses, behavior patterns, and performance on job-specific tasks. Our system achieves 92% accuracy in predicting job performance by testing real-world skills rather than just reviewing resumes. The AI learns from your feedback to continuously improve candidate matching."
+      question: "How is PeopleOS different from other hiring platforms?",
+      answer: "PeopleOS combines skills assessment, behavioral analysis, and performance prediction in one platform. Unlike resume scanners that just look for keywords, we test real job skills. Unlike standalone assessment tools, we provide complete candidate ranking and team collaboration features. It's the only platform that gives you X-ray vision into candidate quality."
     },
     {
-      question: "Can I customize assessments for different roles?",
-      answer: "Absolutely! Our Visual Builder allows you to create fully customized assessments for any role. You can upload job descriptions, set specific requirements, choose from multiple question types (multiple choice, open-ended, video, document uploads), and adjust difficulty levels. The AI helps generate role-specific questions tailored to your industry."
+      question: "How accurate is the performance prediction?",
+      answer: "Our AI achieves 92% accuracy in predicting job performance, validated across 10,000+ hires. We analyze not just what candidates say, but how they think and solve problems. The system looks at response patterns, problem-solving approach, and behavioral indicators during assessments."
     },
     {
-      question: "How long does it take to set up?",
-      answer: "Getting started with PeopleOS takes just minutes. Simply upload a job description or enter a job title, and our AI-powered Assessment Builder generates a custom assessment automatically. You can review, customize, and launch your first assessment within 15 minutes."
+      question: "Can AI really replace resume screening?",
+      answer: "Yes, but it does much more than just screening. Our AI creates assessments from job descriptions, automatically ranks candidates by job-fit, and provides confidence scores for hiring decisions. You get candidates who can actually do the job, not just those who look good on paper."
     },
     {
-      question: "What kind of support do you provide?",
-      answer: "We provide comprehensive support including onboarding assistance, best practices coaching, and ongoing technical support. Our team works closely with hiring teams to optimize their processes and ensure maximum success. You'll also get access to proven strategies from the world's most successful hiring teams."
+      question: "How fast can I get up and running?",
+      answer: "Upload a job description and get a custom assessment in under 5 minutes. Most companies launch their first assessment within 15 minutes and see ranked candidates within 24 hours. It's designed for speed without sacrificing quality."
     },
     {
-      question: "Is my data secure?",
-      answer: "Yes, we take data security seriously. PeopleOS uses enterprise-grade encryption, secure data storage, and complies with industry standards for data protection. All candidate information and assessment data is stored securely and accessed only by authorized users. We're fully compliant with privacy regulations and industry standards."
+      question: "What if candidates don't complete the assessments?",
+      answer: "Our mobile-first design and engaging assessment experience leads to 40% higher completion rates than traditional screening methods. Candidates actually enjoy the process because it lets them showcase their real abilities rather than just answering generic questions."
     },
     {
-      question: "How quickly can I see results?",
-      answer: "You can start seeing qualified candidates immediately after launching your assessment. Most companies see a 85% reduction in screening time and begin receiving ranked, qualified candidates within 24-48 hours. The AI provides instant scoring and recommendations as soon as candidates complete assessments."
+      question: "How does the AI learn what I value?",
+      answer: "The AI learns from your feedback when you grade sample responses and make hiring decisions. The more you use it, the better it becomes at identifying candidates who match your specific requirements and company culture. You're training your own hiring assistant."
     },
     {
-      question: "What industries does PeopleOS work best for?",
-      answer: "PeopleOS is particularly effective for skilled trades, construction, manufacturing, healthcare, and technical roles where specific skills and certifications are crucial. However, our customizable platform works for any industry that needs to verify candidate qualifications and job-specific abilities."
+      question: "Can my team collaborate on hiring decisions?",
+      answer: "Absolutely. Share candidate insights, performance analytics, and assessment results with your hiring team. Make data-driven decisions together with detailed candidate profiles that go far beyond what a resume can tell you."
     },
     {
-      question: "How does the credential verification work?",
-      answer: "Our system automatically verifies licenses, certifications, and credentials in real-time by connecting to official databases and verification services. This eliminates manual verification processes and ensures compliance with industry standards, saving hundreds of hours of administrative work."
+      question: "What types of roles work best with PeopleOS?",
+      answer: "PeopleOS excels with roles where skills matter more than credentials - construction, healthcare, manufacturing, technical positions, and skilled trades. However, any role that requires specific abilities (rather than just education) benefits from our performance-based assessment approach."
     }
   ];
 
@@ -44,10 +44,10 @@ const FAQ = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Have questions?
+            Still have questions?
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            We're here to help you understand how everything works. Check out our frequently asked questions below, or reach out to our support team if you need more specific information.
+            Learn how PeopleOS can transform your hiring process from chaos to clarity. Find answers to common questions about our AI-powered candidate quality assessment platform.
           </p>
         </div>
         

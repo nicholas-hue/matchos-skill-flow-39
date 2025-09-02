@@ -9,23 +9,23 @@ const SmartAssessment = () => {
   const features = [
     {
       icon: CheckCircle,
-      title: "Auto-generated technical questions",
-      description: "AI creates role-specific questions tailored to your industry"
+      title: "Behavioral analysis during assessments",
+      description: "AI analyzes response patterns and problem-solving approach"
     },
     {
       icon: Award,
-      title: "Role-specific skill assessments", 
-      description: "Test the exact skills candidates will use on the job"
+      title: "Real-world performance prediction", 
+      description: "92% accuracy in predicting actual job performance"
     },
     {
       icon: BarChart3,
-      title: "Instant scoring and feedback",
-      description: "Get immediate results with detailed performance analytics"
+      title: "Confidence scoring for hiring decisions",
+      description: "Get detailed insights into candidate quality and job-fit"
     },
     {
       icon: Users,
-      title: "Customizable difficulty levels",
-      description: "Adjust assessment complexity based on experience level"
+      title: "Industry-specific assessment generation",
+      description: "Upload job description, get custom assessments instantly"
     }
   ];
 
@@ -76,13 +76,14 @@ const SmartAssessment = () => {
           
           <div>
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
-              Smart Assessment
+              Stop hiring candidates who can't do the job
             </h2>
             <p className="text-xl text-primary font-semibold mb-4">
-              AI powered skill assessments
+              AI that understands your industry, not just keywords
             </p>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              Upgrade your hiring process with assessments designed to reveal who can actually perform on the job. PeopleOS reveals the strongest candidates by testing real-world, role-specific tasks tailored to your business.
+              Get X-ray vision into candidate quality with AI-powered assessments that predict real-world job performance. 
+              Our system analyzes not just what candidates say, but how they think and solve problems.
             </p>
             
             <div className="grid md:grid-cols-2 gap-4 mb-8">
@@ -106,7 +107,8 @@ const SmartAssessment = () => {
             <div className="bg-primary/5 rounded-lg p-6">
               <div className="text-center">
                 <div className="text-4xl font-bold text-primary mb-2">92%</div>
-                <div className="text-sm text-muted-foreground">Accuracy Rate</div>
+                <div className="text-sm text-muted-foreground">Performance Prediction Accuracy</div>
+                <div className="text-xs text-muted-foreground mt-1">Validated across 10,000+ hires</div>
               </div>
             </div>
           </div>

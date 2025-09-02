@@ -33,11 +33,11 @@ const HowItWorks = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            How PeopleOS transforms your hiring process
+            From job description to hired — in half the time
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Our AI-powered platform streamlines every step of hiring, from creating engaging assessments to 
-            delivering ranked candidates, so you can make better hiring decisions faster.
+            Our AI-powered platform eliminates manual screening, predicts job performance, and delivers ranked candidates 
+            who can actually do the job. Cut your time-to-hire from weeks to days.
           </p>
         </div>
         

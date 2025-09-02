@@ -9,42 +9,42 @@ const CustomerTestimonials = () => {
 
   const testimonials = [
     {
-      quote: "PeopleOS reduced our screening time by 85% and improved candidate quality significantly. The AI-powered questions are spot-on for our industry.",
+      quote: "Cut our time-to-hire from 6 weeks to 6 days. PeopleOS gave us X-ray vision into candidate quality - we stopped hiring people who looked good on paper but couldn't do the job.",
       name: "Marcus Williams",
       role: "HR Director",
       company: "BuildCorp",
       avatar: "MW"
     },
     {
-      quote: "We went from taking 6 weeks to fill positions to just 2 days. The AI screening is incredibly accurate and saves us countless hours.",
+      quote: "40% reduction in early-term turnover since using PeopleOS. The performance prediction is scary accurate - high-scoring candidates actually perform well on the job.",
       name: "Ashley Rodriguez", 
       role: "Operations Manager",
       company: "TechFlow Industries",
       avatar: "AR"
     },
     {
-      quote: "Finding qualified electricians used to be our biggest challenge. Now we have a pipeline of pre-screened candidates ready to work.",
+      quote: "Cut screening time by 85% while improving hire quality. Instead of reviewing 200 resumes, we interview 5 pre-ranked candidates who can actually do the work.",
       name: "Brandon Thompson",
       role: "Talent Acquisition Lead", 
       company: "PowerTech Solutions",
       avatar: "BT"
     },
     {
-      quote: "The certification verification feature alone saved us hundreds of hours. No more chasing down paperwork or verifying credentials manually.",
+      quote: "The AI learns what we value and gets better over time. It's like having a hiring assistant that understands our industry and never sleeps.",
       name: "Sofia Chen",
       role: "Project Manager",
       company: "Elite Construction",
       avatar: "SC"
     },
     {
-      quote: "Our retention rate improved by 40% since we started using PeopleOS. Better screening means better hires and significantly reduced turnover.",
+      quote: "Finally found the perfect balance - candidates who can do the job AND want to do it. Our team productivity increased 30% with better quality hires.",
       name: "Jordan Martinez",
       role: "People Operations Director",
       company: "Industrial Solutions",
       avatar: "JM"
     },
     {
-      quote: "The AI-powered questions are spot-on for our industry. We're getting candidates who actually know what they're doing from day one.",
+      quote: "Went from chaos to clarity in our hiring process. Half the time, twice the quality. PeopleOS transformed how we think about recruitment.",
       name: "Taylor Wilson",
       role: "Construction Manager",
       company: "Premier Builders",
@@ -65,10 +65,10 @@ const CustomerTestimonials = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            What our customers say
+            From hiring chaos to hiring clarity
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Real results from companies transforming their hiring process
+            Real companies sharing how they transformed their hiring with AI-powered candidate quality assessment
           </p>
         </div>
         

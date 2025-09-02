@@ -12,9 +12,10 @@ import { SparklesCore } from "@/components/ui/sparkles";
 
 const Hero = () => {
   const headlines = [
-    "Qualifying the best. Skipping the rest. <span class='text-primary'>Instantly</span>",
-    "Make better <span class='text-primary'>hiring decisions</span> faster with engaging skills tests", 
-    "Find <span class='text-primary'>motivated applicants</span> and reduce time to hire"
+    "Get <span class='text-primary'>X-ray vision</span> into candidate quality",
+    "Turn hiring chaos into <span class='text-primary'>clarity</span> — find candidates who can actually do the job",
+    "Cut screening time by <span class='text-primary'>85%</span> with AI-powered quality assessment",
+    "Stop hiring candidates who look good on paper but <span class='text-primary'>can't do the job</span>"
   ];
 
   const [currentHeadline, setCurrentHeadline] = useState(0);
@@ -77,7 +78,7 @@ const Hero = () => {
             />
             
             <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
-              Simplify hiring process and let your team focus on people, not paperwork.
+              AI-powered skills assessment that predicts real-world job performance. Half the time, twice the quality.
             </p>
             
             <div className="bg-card border border-border rounded-lg p-4 mb-6">
@@ -118,15 +119,15 @@ const Hero = () => {
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-border">
               <div>
                 <div className="text-2xl font-bold text-foreground">92%</div>
-                <div className="text-sm text-muted-foreground">Accuracy Rate</div>
+                <div className="text-sm text-muted-foreground">Performance Prediction</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-foreground">87%</div>
-                <div className="text-sm text-muted-foreground">Completion Rate</div>
+                <div className="text-2xl font-bold text-foreground">85%</div>
+                <div className="text-sm text-muted-foreground">Time Reduction</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-foreground">94%</div>
-                <div className="text-sm text-muted-foreground">Candidate Satisfaction</div>
+                <div className="text-2xl font-bold text-foreground">40%</div>
+                <div className="text-sm text-muted-foreground">Less Early Turnover</div>
               </div>
             </div>
           </div>

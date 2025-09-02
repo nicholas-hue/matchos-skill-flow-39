@@ -7,33 +7,33 @@ const Features = () => {
   const features = [
     {
       icon: Sparkles,
-      title: "Mobile-Friendly Assessments",
-      description: "Candidates can showcase their talent on any device with engaging assessments that they'll actually enjoy completing."
+      title: "AI-Generated Custom Assessments",
+      description: "Upload a job description and our AI creates industry-specific assessments in minutes. No tech skills required."
     },
     {
       icon: MessageSquare,
-      title: "AI-Powered Skills Testing",
-      description: "Test communication, time management, resilience, and job-specific tasks. Our AI analyzes responses to identify the best candidates."
+      title: "Real-World Performance Prediction",
+      description: "Test actual job skills, not just resume keywords. Our AI analyzes responses to predict on-the-job performance with 92% accuracy."
     },
     {
       icon: Shield,
-      title: "Real-Time Candidate Tracking",
-      description: "Stay updated when candidates open emails, start tests, or complete assessments. Know exactly where each candidate stands."
+      title: "Candidate Quality Scoring",
+      description: "Advanced behavioral analysis during assessments provides confidence scores for each candidate's true abilities."
     },
     {
       icon: Zap,
       title: "Automated Candidate Ranking",
-      description: "Skip manual resume review and get candidates ranked by performance. Spend time only on the most qualified applicants."
+      description: "Skip manual screening entirely. Get candidates automatically ranked by job-fit and performance potential."
     },
     {
       icon: Settings,
-      title: "File Upload Capabilities", 
-      description: "Candidates can upload portfolios, certificates, or any file type they'll use on the job. Support for PDF, PSD, ODT and more."
+      title: "Collaborative Team Decisions", 
+      description: "Share candidate insights with your hiring team. Make data-driven decisions together with detailed performance analytics."
     },
     {
       icon: Smartphone,
-      title: "Collaborative Hiring",
-      description: "Share candidate details and scores with hiring managers and recruiters to make informed team decisions."
+      title: "Mobile-First Experience",
+      description: "Candidates complete assessments on any device with an experience they'll actually enjoy, increasing completion rates by 40%."
     }
   ];
 
@@ -42,10 +42,10 @@ const Features = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-            Create efficiency in your hiring process
+            Beyond resume screening — test real skills
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Screen all applicants as they apply and get a ranked list of candidates based on their performance instead of manually reviewing resumes.
+            AI-powered candidate quality assessment that combines skills testing, behavioral analysis, and performance prediction to find candidates who can actually do the job.
           </p>
         </div>
         
